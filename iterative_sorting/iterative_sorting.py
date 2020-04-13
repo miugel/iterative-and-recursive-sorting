@@ -1,28 +1,38 @@
-# TO-DO: Complete the selection_sort() function below 
-def selection_sort( arr ):
-    # loop through n-1 elements
-    for i in range(0, len(arr) - 1):
-        cur_index = i
-        smallest_index = cur_index
-        # TO-DO: find next smallest element
-        # (hint, can do in 3 loc) 
-             
+'''
+selection sort
+- loop through list
+- compare current index with smallest index, reducing the range each iteration
+- if current index is smaller, replace smallest index with current index
+- at the end of iteration, swap the current index and the smallest index in the list
+'''
 
+def selection_sort(list):
+    for i in range(0, len(list)-1):
+        smallest_index = i
 
+        for j in range(i, len(list)):
+            if list[j] < list[smallest_index]:
+                smallest_index = j
 
-        # TO-DO: swap
+        placeholder = list[i]
+        list[i] = list[smallest_index]
+        list[smallest_index] = placeholder
+    return list
 
+# why did the boilerplate come with len(list)-1 in range?
+# what happens with duplicates?
+list = [1, 2, 0, 3, 9, 2, 3, 4, 9, 0, 5]
+selection_sort(list)
+print(list)
 
+# bubble sort
+# not using list directly, but range
+def bubble_sort(list):
+    return list
 
-
-    return arr
-
-
-# TO-DO:  implement the Bubble Sort function below
-def bubble_sort( arr ):
-
-    return arr
-
+list2 = [1, 2, 0, 3, 9, 2, 3, 4, 9, 0, 5]
+bubble_sort(list2)
+print(list2)
 
 # STRETCH: implement the Count Sort function below
 def count_sort( arr, maximum=-1 ):
