@@ -17,6 +17,7 @@ def selection_sort(list):
         placeholder = list[i]
         list[i] = list[smallest_index]
         list[smallest_index] = placeholder
+    
     return list
 
 # why did the boilerplate come with len(list)-1 in range?
@@ -28,6 +29,14 @@ print(list)
 # bubble sort
 # not using list directly, but range
 def bubble_sort(list):
+    for i in range(len(list)-1, 0, -1):
+        for j in range(i):
+            if list[j] > list[j+1]:
+                placeholder = list[j]
+                list[j] = list[j+1]
+                list[j+1] = placeholder
+
+    # return list
     return list
 
 list2 = [1, 2, 0, 3, 9, 2, 3, 4, 9, 0, 5]
@@ -35,6 +44,5 @@ bubble_sort(list2)
 print(list2)
 
 # STRETCH: implement the Count Sort function below
-def count_sort( arr, maximum=-1 ):
-
+def count_sort(arr, maximum=-1):
     return arr
